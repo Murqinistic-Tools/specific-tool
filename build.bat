@@ -1,0 +1,1 @@
+python -m PyInstaller --noconsole --onefile --name="specific-tool" --icon="assets\specific-tool.ico" --add-data "assets\specific-tool.ico;." changer.py

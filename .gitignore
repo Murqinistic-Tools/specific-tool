@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+.env           
+
+# User Specific Settings
+settings.json
+
+# IDE Settings
+.vscode/
+.idea/
+
+# OS Junk
+.DS_Store
+Thumbs.db
+specific_kaomoji.ico
+
+# PyInstaller Artifacts
+build/
+dist/
+*.spec

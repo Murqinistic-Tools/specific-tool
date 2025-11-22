@@ -1,0 +1,5 @@
+customtkinter
+hid
+Pillow
+psutil
+pywin32
