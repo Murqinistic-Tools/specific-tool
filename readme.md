@@ -26,7 +26,7 @@ Specific Tool is a high-performance input optimization and peripheral management
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/murqin/specific-tool.git](https://github.com/Murqin/specific-tool.git)
+   git clone [https://github.com/Murqin/specific-tool.git](https://github.com/Murqin/specific-tool.git)
 
 
 ## 🧪 For Developers: Porting to Other Mice
