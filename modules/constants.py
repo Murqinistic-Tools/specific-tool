@@ -1,7 +1,7 @@
 # modules/constants.py
 
-APP_NAME = "Specific Tool"
-VERSION = "2.0.0"
+APP_NAME = "SpecificTool"
+VERSION = "2.1.1"
 
 # VERCEL / GEIST THEME TOKENS
 THEME = {

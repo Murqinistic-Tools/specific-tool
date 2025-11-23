@@ -45,9 +45,12 @@ class App(ctk.CTk):
     """
     def __init__(self):
         super().__init__()
+
+        
         
         # --- Managers & Hardware ---
         self.cfg = ConfigManager()
+        self.cfg.save()
         self.mgr = AppManager()
         self.mgr.ensure_installed()
         
@@ -299,6 +302,12 @@ class App(ctk.CTk):
         self.slider_vib_game = ctk.CTkSlider(vib_card, from_=0, to=100, number_of_steps=100, button_color=THEME["ACCENT"], progress_color=THEME["ACCENT"], button_hover_color="#FFFFFF", command=lambda v: self.on_vib_change(v, True))
         self.slider_vib_game.set(100)
         self.slider_vib_game.pack(fill="x", padx=15, pady=(0, 15))
+    
+    def toggle_startup(self):
+        state = bool(self.chk_startup.get())
+        self.mgr.set_startup(state)
+        self.cfg.settings.update({"startup": state})
+        self.cfg.save()
 
     def build_settings(self, p):
         card = ctk.CTkFrame(p, fg_color="transparent", border_width=1, border_color=THEME["BORDER"], corner_radius=8)
@@ -307,8 +316,6 @@ class App(ctk.CTk):
         self.chk_startup, f1 = self.create_vercel_switch(card, "Windows Startup", "Launch on boot", self.toggle_startup)
         f1.pack(fill="x", padx=20, pady=(20, 10))
         if self.mgr.is_startup_enabled(): self.chk_startup.select()
-        if self.cfg.settings.get("startup", False):
-            self.chk_startup.select()
 
         self.chk_tray, f2 = self.create_vercel_switch(card, "Start Minimized", "Boot to tray icon", self.save_settings)
         f2.pack(fill="x", padx=20, pady=10)
