@@ -79,8 +79,11 @@ Modern gaming mice are "Composite Devices" that expose multiple **HID Interfaces
 In `modules/hardware.py` (Line ~57), the code filters for the specific configuration interface. **You must modify this condition to match your mouse's HID path:**
 
 ```python
-# VXE MAD R uses Interface 1 (mi_01) and Collection 5 (col05)
-# TODO: Update checking logic below for your specific mouse!
-if "mi_01" in path and "col05" in path:
-    # Found the correct HID device for configuration
-    return device
+            for d in hid.enumerate(self.VENDOR_ID, self.PRODUCT_ID):
+                path = d['path'].decode('utf-8','ignore').lower()
+                if "mi_01" in path and "col05" in path:  # Channel & interface
+                    self.device = hid.device()
+                    self.device.open_path(d['path'])
+                    self.device.set_nonblocking(1)
+                    return True
+```
