@@ -1,3 +1,7 @@
+# Critical Note ⚠️
+
+This tool currently overwrites your DPI profiles. I may fix it in the future if I get around to it.
+
 # Specific Tool 🎯
 
 Specific Tool is a high-performance input optimization and peripheral management tool designed for competitive gaming. It automates DPI switching, polling rate adjustments, and digital vibrance settings based on the active process.
