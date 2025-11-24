@@ -79,7 +79,8 @@ class AppManager:
                 "powershell",
                 "-Command",
                 "Start-Process reg -ArgumentList 'add HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v \"%s\" /t REG_SZ /d \"%s\" /f' -Verb RunAs" 
-                % (APP_NAME, self.current_path))])
+                % (APP_NAME, self.current_path)
+                ])
             else:
                 subprocess.run([
                 "powershell",
