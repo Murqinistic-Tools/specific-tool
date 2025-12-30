@@ -4,7 +4,7 @@ This tool currently overwrites your DPI profiles. I may fix it in the future if 
 
 If you are using an ATK hub, I do not recommend using this software. **Use onboard config** for digital vibrance; the vibrance GUI is always more ideal. One day, Nvidia may change these magic numbers. 
 
-And under 50 digital vibrance value is has bug i m not fix it.
+And under 50 digital vibrance value is has bug i will not fix..
 
 The coding of this tool was done entirely by AI.
 
